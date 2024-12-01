@@ -1,94 +1,558 @@
-:root {--primary-color: #9F3A35;--text-color: #44403C;--line-color: #78716C;--main-bg-color: #FFF7ED;}
+:root {
+    --primary-color: #9F3A35;
+    --text-color: #44403C;
+    --line-color: #78716C;
+    --main-bg-color: #FFF7ED;
+}
+
 /*  */
-@keyframes button-rotate{0%{transform:rotate(0deg);}25%{transform:rotate(1deg) scale(1.05);}75%{transform:rotate(-1deg) scale(1.05);}100%{transform:rotate(0deg) scale(1.05);}}
-@keyframes nav-expand{0%{transform:scale(1);}100%{transform:scale(1.05);}}
-@keyframes nav-shrink{0%{transform:scale(1.05);}100%{transform:scale(0.95);}}
-@keyframes raise-color{0%{transform: translateY(100%);}100%{transform: translateY(0%);}}
+@keyframes button-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(1deg) scale(1.05);
+    }
+
+    75% {
+        transform: rotate(-1deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1.05);
+    }
+}
+
+@keyframes nav-expand {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes nav-shrink {
+    0% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(0.95);
+    }
+}
+
+@keyframes raise-color {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 /*  */
 
-body {background-color: var(--main-bg-color);font-family: "Overpass", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;padding: 0;margin: 0;
+body {
+    background-color: var(--main-bg-color);
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
 }
-img {width: 100%;}
-svg {fill: #fff;}
+
+img {
+    width: 100%;
+}
+
+svg {
+    fill: #fff;
+}
+
 h1,
-h2 {font-family: "Nanum Myeongjo", serif;font-weight: 700;font-style: normal;}
-h1 {font-size: 3.5rem;margin: 1rem;}
-h1 span {color: var(--primary-color);}
-h2 {font-size: 2.5rem;margin: 0;}
-h3 {text-align: center;}
-a {color: inherit;text-decoration: inherit;}
-
-.flex {display: flex;flex-direction: column;align-items: center;justify-content: space-between;}
-.grid {display: grid;grid-template-columns: 1fr;margin: 0 auto;}
-.block {display: block;}
-.container {margin: 0 auto;max-width: 1200px;padding: 1rem;}
-
-header {flex-wrap: nowrap;font-family: "Overpass";font-weight: 900;padding: 3rem;container: search/inline-size;}
-header .container {margin: 0 2rem 0 auto;border-bottom: var(--line-color) 2px solid;flex-direction: row;}
-header ul {display: flex;gap: 1rem;list-style-type: none;flex-flow: column;}
-header li a {color: #000;text-decoration: none;padding: 0.5rem 1rem;}
-header li:hover {box-shadow: 0px 4px 0px var(--primary-color);animation: nav-expand 0.2s;transform: scale(1.05)}
-header li:active {animation: nav-shrink 0.2s;transform: scale(0.95)}
-header nav {max-width: 0px;overflow: hidden;position: absolute;top: 130px;left: 0;box-shadow: 2px 2px 3px#000000ee;background-color: var(--main-bg-color);z-index: 100000;display: block;}
-
-.tog-btn {width: 3rem;height: 100%;background: none;box-shadow: none;border: 2px #000 solid;border-radius: 5px;transition-duration: 0.2s;stroke: #000;}
-.tog-btn:hover {border: var(--primary-color) 2px solid;cursor: pointer;stroke: var(--primary-color);}
-.show-nav {max-width: 1000px;}
-.search {display: flex;align-items: center;height: fit-content;}
-.search label {font-size: 1.125rem;margin: 0 0.3rem;}
-.search input {max-width: 0px;overflow: hidden;transition: 0.3s ease-in;}
-.search:hover input,
-.search input:focus {max-width: 170px;}
-main>div:nth-of-type(1) {container: exhibits/inline-size;position: relative;}
-main>div:nth-of-type(2) {container: artists/inline-size;}
-.exhibit-grid>div {padding: 0.5rem;}
-.exhibit-grid img {border-radius: 32px;}
-.new-artists {background: url(../img/bg-image-sm.webp) #2a3739d3;color: #fff;background-blend-mode: darken;}
-.new-artists .flex {align-items: flex-start;gap: 1rem;}
-.card {width: 100%;}
-.card:nth-of-type(1) img {border-top-right-radius: 105px;border-bottom-left-radius: 105px;}
-.card:nth-of-type(2) img {border-top-right-radius: 105px;border-top-left-radius: 105px}
-.card:nth-of-type(3) img {border-top-left-radius: 105px;border-bottom-right-radius: 105px;}
-
-
-.button {margin: 0 auto;width: max-content;background-color: #400502;border-radius: 18px;
-display: block;}
-.button a {padding: 0.5rem 1rem;background-color: var(--primary-color);border-radius: 18px;transition-duration: 0.3s;color: #fff;
-    border: 2px solid #00000000;transform: translateY(-5px);display: block;}
-.button:hover{animation: button-rotate 0.2s;transform: scale(1.05);}
-.button a:hover {background-color: #b45651;border: 2px solid #000;}
-.button a:active {background-color: #7c2d29;transform: translateY(-2px);}
-
-
-.new-artists {padding: 2rem 1rem;}
-.image-grid {grid-template-columns: repeat(4, 1fr);padding: 2rem;}
-.image-grid div {grid-column: 1 /span 3;grid-row: 2 /span 2;}
-.image-grid h2 {border-left: 2px var(--line-color) solid;padding-left: 2rem;}
-.image-grid img {border-radius: 50%;}
-.image-grid img:nth-of-type(1) {grid-column: 2;grid-row: 1;}
-.image-grid img:nth-of-type(2) {grid-column: 4;grid-row: 1;}
-.image-grid img:nth-of-type(3) {grid-column: 4;grid-row: 3;}
-.image-grid img:nth-of-type(4) {grid-column: 1;grid-row: 4;}
-.image-grid img:nth-of-type(5) {grid-column: 3;grid-row: 4;}
-.discover {background-color: var(--primary-color);color: #fff;padding: 2rem inherit;container: discover/inline-size;}
-.discover .grid {grid-template-columns: repeat(2, 1fr);}
-.discover .grid>div {padding: 1rem;}
-.discover .grid>div:not(:first-of-type) {border: 1px #fff solid;aspect-ratio: 1 / 1;position: relative;overflow: hidden;}
-.discover .grid>div:not(:first-of-type) > *{z-index: 1;}
-.discover .grid>div:not(:first-of-type):hover::before{content: '';background: #bb7976;width: 100%;height: 100%;position: absolute;
-    animation: raise-color 0.5s ease-in;}
-.discover .grid>div:not(:first-of-type):hover {color: #000;fill: #000;cursor: pointer;}
-.discover .grid>div:not(:first-of-type):hover svg {fill: #000;}
-.discover .grid>div:first-of-type {grid-column: 1/span 2;}
-.discover .grid>div:last-of-type {grid-column: 1/span 2;aspect-ratio: inherit;}
-.discover .grid div {display: flex;flex-flow: column;align-items: center;justify-content: center;}
-footer {background-color: var(--text-color);padding: 1rem;color: #fff;padding: 1rem;}
-@media screen and (min-width:700px) {
-    h1 {font-size: 5rem;padding: 2rem;}h2 {font-size: 4rem;}
-.exhibit-grid {grid-template-columns: repeat(12, 1fr);gap: 1rem;width: 100%;}.exhibit-grid>div:not(:first-of-type) {grid-column: span 5;}.exhibit-grid div:first-child {grid-column: 6 /span 7;grid-row: 1 /span 1;width: 100%;}.image-grid {grid-template-columns: repeat(6, 1fr);}.image-grid div {grid-column: 1 /span 2;grid-row: 3 /span 2;}.image-grid img:nth-of-type(1) {grid-column: 2;grid-row: 1;}.image-grid img:nth-of-type(2) {grid-column: 6;grid-row: 1;}.image-grid img:nth-of-type(3) {grid-column: 4;grid-row: 2;}.image-grid img:nth-of-type(4) {grid-column: 5;grid-row: 3;}.image-grid img:nth-of-type(5) {grid-column: 3;grid-row: 4;}
+h2 {
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 700;
+    font-style: normal;
 }
-@container search (width > 1074px) {header ul {flex-flow: row;}header nav {max-width: inherit;position: inherit;background: none;box-shadow: none;}.tog-btn {display: none;}}
-@container exhibits (width > 1159px) {.exhibit {grid-template-columns: 3fr 7fr;display: grid;}.exhibit>div:first-of-type {height: 900px;}h1 {font-size: 8rem;writing-mode: vertical-rl}}
-@container artists (width > 770px) {.flex {flex-direction: row;}.new-artists {background: url(../img/bg-image-md.webp) #2a3739d3;}}
-@container artists (width > 1100px) {.flex {flex-direction: row;}.new-artists {background: url(../img/bg-image-lg.webp) #2a3739d3;}}
-@container discover (width > 1060px) {.discover .flex {flex-flow: row;}.discover .grid {grid-template-columns: repeat(4, 1fr);grid-template-rows: 1fr 1fr;}.discover .grid>div:first-of-type {grid-column: 1/span 3;}.discover .grid>div:last-of-type {grid-column: span 1;}.discover h2 {font-size: 8rem;writing-mode: vertical-rl}}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 1rem;
+}
+
+h1 span {
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+}
+
+.block {
+    display: block;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+header {
+    flex-wrap: nowrap;
+    font-family: "Overpass";
+    font-weight: 900;
+    padding: 3rem;
+    container: search/inline-size;
+}
+
+header .container {
+    margin: 0 2rem 0 auto;
+    border-bottom: var(--line-color) 2px solid;
+    flex-direction: row;
+}
+
+header ul {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    flex-flow: column;
+}
+
+header li a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+header li:hover {
+    box-shadow: 0px 4px 0px var(--primary-color);
+    animation: nav-expand 0.2s;
+    transform: scale(1.05)
+}
+
+header li:active {
+    animation: nav-shrink 0.2s;
+    transform: scale(0.95)
+}
+
+header nav {
+    max-width: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 130px;
+    left: 0;
+    box-shadow: 2px 2px 3px#000000ee;
+    background-color: var(--main-bg-color);
+    z-index: 100000;
+    display: block;
+}
+
+.tog-btn {
+    width: 3rem;
+    height: 100%;
+    background: none;
+    box-shadow: none;
+    border: 2px #000 solid;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    stroke: #000;
+}
+
+.tog-btn:hover {
+    border: var(--primary-color) 2px solid;
+    cursor: pointer;
+    stroke: var(--primary-color);
+}
+
+.show-nav {
+    max-width: 1000px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+}
+
+.search label {
+    font-size: 1.125rem;
+    margin: 0 0.3rem;
+}
+
+.search input {
+    max-width: 0px;
+    overflow: hidden;
+    transition: 0.3s ease-in;
+}
+
+.search:hover input,
+.search input:focus {
+    max-width: 170px;
+}
+
+.exhibit-container {
+    container: exhibits/inline-size;
+    position: relative;
+}
+
+.artist-container {
+    container: artists/inline-size;
+}
+
+.exhibit-grid>div {
+    padding: 0.5rem;
+}
+
+.exhibit-grid img {
+    border-radius: 32px;
+}
+
+.new-artists {
+    background: url(../img/bg-image-sm.webp) #2a3739d3;
+    color: #fff;
+    background-blend-mode: darken;
+}
+
+.new-artists .flex {
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card {
+    width: 100%;
+}
+
+.card:nth-of-type(1) img {
+    border-top-right-radius: 105px;
+    border-bottom-left-radius: 105px;
+}
+
+.card:nth-of-type(2) img {
+    border-top-right-radius: 105px;
+    border-top-left-radius: 105px
+}
+
+.card:nth-of-type(3) img {
+    border-top-left-radius: 105px;
+    border-bottom-right-radius: 105px;
+}
+
+
+.button {
+    margin: 0 auto;
+    width: max-content;
+    background-color: #400502;
+    border-radius: 18px;
+    display: block;
+}
+
+.button a {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    border-radius: 18px;
+    transition-duration: 0.3s;
+    color: #fff;
+    border: 2px solid #00000000;
+    transform: translateY(-5px);
+    display: block;
+}
+
+.button:hover {
+    animation: button-rotate 0.2s;
+    transform: scale(1.05);
+}
+
+.button a:hover {
+    background-color: #b45651;
+    border: 2px solid #000;
+}
+
+.button a:active {
+    background-color: #7c2d29;
+    transform: translateY(-2px);
+}
+
+
+.new-artists {
+    padding: 2rem 1rem;
+}
+
+.image-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem;
+}
+
+.image-grid div {
+    grid-column: 1 /span 3;
+    grid-row: 2 /span 2;
+}
+
+.image-grid h2 {
+    border-left: 2px var(--line-color) solid;
+    padding-left: 2rem;
+}
+
+.image-grid img {
+    border-radius: 50%;
+}
+
+.image-grid img:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-grid img:nth-of-type(2) {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.image-grid img:nth-of-type(3) {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.image-grid img:nth-of-type(4) {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.image-grid img:nth-of-type(5) {
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.discover {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 2rem inherit;
+    container: discover/inline-size;
+}
+
+.discover .grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.discover .grid>div {
+    padding: 1rem;
+}
+
+.discover .grid>div:not(:first-of-type) {
+    border: 1px #fff solid;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.discover .grid>div:not(:first-of-type)>* {
+    z-index: 1;
+}
+
+.discover .grid>div:not(:first-of-type):hover::before {
+    content: '';
+    background: #bb7976;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: raise-color 0.5s ease-in;
+}
+
+.discover .grid>div:not(:first-of-type):hover {
+    color: #000;
+    fill: #000;
+    cursor: pointer;
+}
+
+.discover .grid>div:not(:first-of-type):hover svg {
+    fill: #000;
+}
+
+.discover .grid>div:first-of-type {
+    grid-column: 1/span 2;
+}
+
+.discover .grid>div:last-of-type {
+    grid-column: 1/span 2;
+    aspect-ratio: inherit;
+}
+
+.discover .grid div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: var(--text-color);
+    padding: 1rem;
+    color: #fff;
+    padding: 1rem;
+}
+
+@media screen and (min-width:700px) {
+    h1 {
+        font-size: 5rem;
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    .exhibit-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .exhibit-grid>div:not(:first-of-type) {
+        grid-column: span 5;
+    }
+
+    .exhibit-grid div:first-child {
+        grid-column: 6 /span 7;
+        grid-row: 1 /span 1;
+        width: 100%;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .image-grid div {
+        grid-column: 1 /span 2;
+        grid-row: 3 /span 2;
+    }
+
+    .image-grid img:nth-of-type(1) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .image-grid img:nth-of-type(2) {
+        grid-column: 6;
+        grid-row: 1;
+    }
+
+    .image-grid img:nth-of-type(3) {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .image-grid img:nth-of-type(4) {
+        grid-column: 5;
+        grid-row: 3;
+    }
+
+    .image-grid img:nth-of-type(5) {
+        grid-column: 3;
+        grid-row: 4;
+    }
+}
+
+@container search (width > 1074px) {
+    header ul {
+        flex-flow: row;
+    }
+
+    header nav {
+        max-width: inherit;
+        position: inherit;
+        background: none;
+        box-shadow: none;
+    }
+
+    .tog-btn {
+        display: none;
+    }
+}
+
+@container exhibits (width > 1159px) {
+    .exhibit {
+        grid-template-columns: 3fr 7fr;
+        display: grid;
+    }
+
+    .exhibit>div:first-of-type {
+        height: 900px;
+    }
+
+    h1 {
+        font-size: 8rem;
+        writing-mode: vertical-rl
+    }
+}
+
+@container artists (width > 770px) {
+    .flex {
+        flex-direction: row;
+    }
+
+    .new-artists {
+        background: url(../img/bg-image-md.webp) #2a3739d3;
+    }
+}
+
+@container artists (width > 1100px) {
+    .flex {
+        flex-direction: row;
+    }
+
+    .new-artists {
+        background: url(../img/bg-image-lg.webp) #2a3739d3;
+    }
+}
+
+@container discover (width > 1060px) {
+    .discover .flex {
+        flex-flow: row;
+    }
+
+    .discover .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .discover .grid>div:first-of-type {
+        grid-column: 1/span 3;
+    }
+
+    .discover .grid>div:last-of-type {
+        grid-column: span 1;
+    }
+
+    .discover h2 {
+        font-size: 8rem;
+        writing-mode: vertical-rl
+    }
+}
